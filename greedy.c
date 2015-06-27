@@ -22,13 +22,13 @@ void read_file(char* fname){
   FILE *fp;
   int i=0;
   double f1, f2;
-  char dammy[10];
+  char xname[10],yname[10];
 
   if((fp = fopen( fname, "r" ))==NULL){
     printf( "Can't open %s\n", fname );
     exit(1);
   }
-  fscanf( fp, "%[^,],%s",dammy,dammy);   //[^,] avoid reading ','  
+  fscanf( fp, "%[^,],%s",xname,yname);   //[^,] avoid reading ','  
   for(int i=0; i<LENGTH; i++) {
     table[i].passed=0;
     if((fscanf( fp, "%lf,%lf",&table[i].x, &table[i].y) ) == EOF){ 
