@@ -16,7 +16,7 @@ double distance(double x1,double x2,double y1, double y2){
 
 void read_file(char* fname){
   FILE *fp;
-  int ret,i=0;
+  int i=0;
   double f1, f2;
   char xname[10],yname[10];
 
@@ -31,7 +31,7 @@ void read_file(char* fname){
                 }
         else{
             table[i-1].passed=1;
-                if((ret = fscanf( fp, "%lf,%lf",&table[i-1].x, &table[i-1].y) ) != EOF){
+                if((fscanf( fp, "%lf,%lf",&table[i-1].x, &table[i-1].y) ) != EOF){
                 }
         }
        }
