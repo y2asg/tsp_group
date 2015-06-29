@@ -107,7 +107,7 @@ int main(void){
         printf("%d\n",solution[i]);
     }
 
-  printf("%lf\n",t_mindist);
+  //printf("%lf\n",t_mindist);
   
   output_file();
   return 0;
