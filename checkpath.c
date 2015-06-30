@@ -5,17 +5,17 @@
 
 void checkpath(int a, int b, int ant.solution[CITY_NUM]){ //配列を引数に渡すやり方が未解決です
 	int i=0;
-	for(i=0;i<=CITY_NUM;i++){
-		if(ant.solution[i]==a){
-			order_a=i;
+	for(i=0;i<=CITY_NUM;i++){ //頂点a,bは何番目に訪れたのかを調べる。
+		if(ant.solution[i]==a){　//ant.solutionの配列の何番目にaを訪れたのか
+			order_a=i; //a は　i番目でした
 		}else{
-			if(ant.solution[i]==b){
-				order_b=i;
+			if(ant.solution[i]==b){////ant.solutionの配列の何番目にbを訪れたのか
+				order_b=i;　//bはi番目
 			}
 		}else{
 		}
 	}
-	if(order_a-order_b==1 || order_a-order_b==-1){
+	if(order_a-order_b==1 || order_a-order_b==-1){　//もし経路が結ばれていたら、隣り合ってるはず。訪れた順番の差は１
 		return 1;
 	}
 	else{
