@@ -1,6 +1,15 @@
 ★メイン関数に書かなきゃいけないこと★
 ・考え得る辺（都市の数ｎ　nC2個）のフェロモン蓄積量をゼロに初期化
-・
+全ての都市間の辺に蓄積されたフェロモンを表す配列の定義
+double field[CITY_NUM][CITY_NUM]=0;
+
+・定数たちのの定義
+double alpha=1.0; //constant number that means priotity for pheromon
+	double beta=5.0;//that for huristics infomation
+	double RHO=0.2; //pheromon no JOUHATURITU
+	int Q=100; //constant number of pheromon
+	int ANT_NUM = 30;// number of ants
+	int MAX_ITER=300 //nanndakore?
 
 
 
