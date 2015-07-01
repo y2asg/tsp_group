@@ -14,7 +14,7 @@ void delta_pheromon(double ant.tour_len,city_a,city_b){
 }
 
 /*ｔ回目からt+1回目のうちにフェロモンが蒸発するのを表す関数*/
-void decay_pheromon(int pheromon){
+void decay_pheromon(double pheromon){
     pheromon *= (1.0 - RHO);
     return pheromon
 }
