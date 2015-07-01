@@ -34,7 +34,7 @@ void update_pher(int city_a, int city_b, double* fields , double tour_len){
                 new_pher=pheromon+delta;
                 return new_pher;
       }else{
-       0;  
+       return 0;  
       }
 }
 //メイン関数内でfieldsの更新を書く
