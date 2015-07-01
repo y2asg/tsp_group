@@ -33,7 +33,7 @@ void update_pher(int city_a, int city_b,double* fields , double ant.tour_len){
       if(city_a!=city_b){
                 pheromon = decay_pheromon(field); //蒸発する
                 delta=delta_pheromon(ant.tour_len);//追加分泌量
-                new_pher=pherimin+delta;
+                new_pher=pheromon+delta;
                 return new_pher;
       }else{
        0;  
