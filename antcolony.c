@@ -9,7 +9,7 @@ typedef struct point_type_t{
   int passed;
 } point_type;
 
-#define LENGTH 5
+#define CITY_NUM 5
 point_type table[LENGTH];
 int solution[LENGTH];
 
@@ -115,10 +115,49 @@ void output_file(void){
     exit(1);
   }
 
-  for(i = 0; i < LENGTH; i++){
+  for(i = 0; i < CITY_NUM; i++){
     if(fprintf(fp, "%d\n",solution[i])<0){
       break; //failed to write
     }
   }
   fclose(fp);
 }
+
+
+int main(void){
+  int i,index,pointer=0;//current pointer
+  read_file("input_0.csv");
+        double alpha=1.0; //constant number that means priotity for pheromon
+	double beta=5.0;//that for huristics infomation
+	double RHO=0.2; //pheromon no JOUHATURITU
+	int Q=100; //constant number of pheromon
+	int ANT_NUM = 30;// number of ant
+	int solution[30][CITY_NUM] //すべてのアリの辿った道順を記憶する配列
+	
+  double min;
+  int passed_n =1;
+ 
+
+  table[pointer].passed =1;
+  solution[passed_n]=pointer;
+  printf("%d\n", pointer);
+
+  while(passed_n < CITY_NUM){
+    min = 1000000000;
+
+    for(i=0;i<LENGTH;i++){
+      if(!(table[i].passed) && i!=pointer){
+          double dist = distance(table[pointer],table[i]);
+          //printf("%d %d %lf\n",pointer, i, dist);
+          if( dist < min){
+              min = dist;
+              index = i;
+          }
+      }
+    } 
+    pointer = index; //move pointer
+    table[index].passed = 1;
+    solution[passed_n]=index;
+    printf("%d\n",index);
+    passed_n ++;
+  }
