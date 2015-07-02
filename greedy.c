@@ -2,17 +2,15 @@
 #include <math.h>
 #include <stdlib.h>
 
-
 typedef struct point_type_t{
   double x;
   double y;
   int passed;
 } point_type;
 
-#define LENGTH 5
+#define LENGTH 8
 point_type table[LENGTH];
 int solution[LENGTH];
-
 
 double distance(point_type a,point_type b){
   return sqrt(pow(a.x-b.x,2) +  pow(a.y-b.y,2));
@@ -60,7 +58,7 @@ void output_file(void){
 
 int main(void){
   int i,index,pointer=0;//current pointer
-  read_file("input_0.csv");
+  read_file("input_1.csv");
   
   double min;
   int passed_n =1;
@@ -71,7 +69,6 @@ int main(void){
 
   while(passed_n < LENGTH){
     min = 1000000000;
-
     for(i=0;i<LENGTH;i++){
       if(!(table[i].passed) && i!=pointer){
           double dist = distance(table[pointer],table[i]);
