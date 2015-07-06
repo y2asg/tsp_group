@@ -97,7 +97,7 @@ int main(void){
     answernow=answernow+min;
     
   }
-  lastlength=distance(table[LENGTH],table[0]);
+  lastlength=distance(table[index],table[0]);
   answer=answernow+lastlength;
   output_file();
   printf("answer=%lf\n",answer);
